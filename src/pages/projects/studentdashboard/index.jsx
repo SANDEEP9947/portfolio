@@ -5,6 +5,11 @@ import s3Image from '../../../assets/s3.png';
 import s4Image from '../../../assets/s4.png';
 import s5Image from '../../../assets/s5.png';
 import s6Image from '../../../assets/s6.png';
+import s7Image from '../../../assets/s7.png';
+import s8Image from '../../../assets/s8.png';
+import s9Image from '../../../assets/s9.png';
+import s10Image from '../../../assets/s10.png';
+import s11Image from '../../../assets/s11.png';
 import { 
   ArrowLeft, 
   ArrowUpRight, 
@@ -120,86 +125,37 @@ const StudentDashboard = () => {
       title: "The Global Feed",
       subtitle: "social discovery",
       desc: "Moving from isolated learning to a community stream. Students can see peer projects, class updates, and featured creative work, fostering a sense of belonging.",
-      img: "https://framerusercontent.com/images/iFpMENO3skTLqrUz6csXvuBeBY.png?width=682&height=519", 
+      img: s7Image,
       label: "Interface 1.0 — Community",
     },
     {
       title: "Practice Zone",
       subtitle: "retention mechanics",
       desc: "A dedicated hub for chapter-wise worksheets and practice material. This addressed the 'forgetting curve' by making offline practice accessible and trackable.",
-      img: "https://framerusercontent.com/images/4wlTRrk9hM8e6WPNuoFSz3hA.png?width=1440&height=1024",
+      img: s8Image,
       label: "Interface 2.0 — Learning Hub"
     },
     {
       title: "Assessment Tracker",
       subtitle: "visible progress",
       desc: "Quizzes were previously buried. The new design surfaces them in a 'To-Do' list with clear deadlines and status indicators, improving completion rates significantly.",
-      img: "https://framerusercontent.com/images/babpZg0XrJpzmNgqJ5HzuLQ1Cao.png?width=2880&height=2030",
+      img: s9Image,
       label: "Interface 3.0 — Assessment UI"
     },
     {
       title: "Smart Calendar",
       subtitle: "scheduling utility",
       desc: "A self-serve scheduling module allowing parents to view upcoming sessions and reschedule conflicts without contacting support.",
-      img: "https://framerusercontent.com/images/Ogr3NwjujwughuWrYXoPeqJJ8M.png?width=362&height=576",
+      img: s10Image,
       label: "Interface 4.0 — Calendar"
     },
     {
       title: "Course Switcher",
       subtitle: "navigation structure",
       desc: "As students enrolled in multiple verticals (Coding, Math, Music), the sidebar allowed for seamless context switching without losing state.",
-      img: "https://framerusercontent.com/images/3FaXMleF8AjTzWSeDzHUTrUunD8.png?width=2880&height=2030",
+      img: s11Image,
       label: "Interface 5.0 — Navigation"
     },
-    {
-      title: "Progression Map",
-      subtitle: "gamification",
-      desc: "Visualizing the long-term journey. Turning the abstract curriculum into a game-like map with milestones, unlocking rewards as they progress.",
-      img: "https://framerusercontent.com/images/8QSjqnEbgBSW3XeAyCMsTcpO4.png?width=2880&height=2002",
-      label: "Interface 6.0 — Roadmap"
-    },
-    {
-      title: "Mobile Responsiveness",
-      subtitle: "adaptive layout",
-      desc: "Ensuring the dashboard remains fully functional on tablets and phones, where 40% of our students access the platform.",
-      img: "https://framerusercontent.com/images/PuXnRrYXwc3VWp73ZxZMhxXqS4.png?width=720&height=2024",
-      label: "Interface 7.0 — Mobile View"
-    },
-    {
-      title: "Achievement System",
-      subtitle: "micro-rewards",
-      desc: "A badge and streak system to celebrate small wins. '7 Day Streak', 'Homework Hero', and 'Project Master' badges build intrinsic motivation.",
-      img: "https://framerusercontent.com/images/Jrje7a3CoIIxiS8hEFLhWCbRiLU.png?width=2896&height=2046", 
-      label: "Interface 8.0 — Badges"
-    },
-    {
-      title: "Parent Mode",
-      subtitle: "transparency",
-      desc: "A toggle specifically for parents to view billing, attendance, and detailed teacher feedback without interfering with the child's game-like view.",
-      img: "https://framerusercontent.com/images/eE5a3qKqQrSDVuMuz8zMM0U.png?width=682&height=950",
-      label: "Interface 9.0 — Parent Dashboard"
-    },
-    {
-      title: "Project Portfolio",
-      subtitle: "student pride",
-      desc: "A public-facing profile where students can showcase their coded apps and certificates to friends and family.",
-      img: "https://framerusercontent.com/images/f5n0w1j759tJnt78nN7BlYeIg.png?width=682&height=843",
-      label: "Interface 10.0 — Public Profile"
-    },
-    {
-      title: "Leaderboards",
-      subtitle: "healthy competition",
-      desc: "Weekly and monthly leaderboards based on 'Experience Points' (XP) earned from class attendance and quiz completion.",
-      img: "https://framerusercontent.com/images/7J020jhYUl2qMlqtu0Sgh4X5g.png?width=682&height=697",
-      label: "Interface 11.0 — Leaderboard"
-    },
-    {
-      title: "Class History",
-      subtitle: "continuity",
-      desc: "Access to past class recordings and teacher notes, allowing students to review concepts before the next session.",
-      img: "https://framerusercontent.com/images/xegMNa5HLzz6v9UReEUO8niIcs.png?width=682&height=615",
-      label: "Interface 12.0 — Archives"
-    }
   ];
 
   return (
@@ -230,8 +186,8 @@ const StudentDashboard = () => {
           <div className="grid grid-cols-1 md:grid-cols-12">
             <div className="md:col-span-8">
               <span className="text-xs font-mono text-[#b3b3b3]/60 mb-6 block uppercase tracking-widest">BrightCHAMPS — Product Redesign</span>
-              <h1 className="font-serif text-4xl md:text-[5vw] leading-[0.9] mb-12 -ml-1 text-[#b3b3b3]">
-                Crafting a Progress-Driven <br /> <span className="italic text-[#b3b3b3]/40">Experience for Modern Learners</span>
+              <h1 className="font-serif text-4xl md:text-[5vw] leading-[0.9] mb-12 -ml-1 text-[#b3b3b3]"> Redesigning the student dashboard <br />
+                 <span className="italic text-[#b3b3b3]/40">for Clarity, Action & Momentum</span>
               </h1>
             </div>
             <div className="md:col-span-4 flex flex-col justify-end pb-4">
@@ -259,7 +215,7 @@ const StudentDashboard = () => {
             <ParallaxImage 
               src={s1Image} 
               alt="Student Dashboard UI" 
-              className="w-full aspect-[21/9] md:h-[85vh] border-y border-[#b3b3b3]/10"
+              className="w-full aspect-[21/9] md:h-[65vh] border-y border-[#b3b3b3]/10"
               speed={-0.08}
               showColor={true}
             />
@@ -308,7 +264,7 @@ const StudentDashboard = () => {
         <section className="py-24 border-t border-[#b3b3b3]/10">
           <div className="grid grid-cols-1 md:grid-cols-12">
             <div className="md:col-span-5 md:pr-12 pb-12 md:pb-0">
-               <span className="text-xs font-mono text-[#b3b3b3]/60 mb-6 block uppercase tracking-widest font-mono">(01.1) — The Challenge</span>
+               <span className="text-xs font-mono text-[#b3b3b3]/60 mb-6 block uppercase tracking-widest font-mono">(02) — The Challenge</span>
                <h2 className="font-serif text-4xl italic text-[#b3b3b3] mb-8">A Dashboard That Lost Its Way</h2>
                
                <p className="text-sm text-[#b3b3b3]/70 leading-relaxed mb-6">
@@ -345,7 +301,7 @@ const StudentDashboard = () => {
                   <div className="aspect-[16/9] border border-[#b3b3b3]/10 overflow-hidden bg-[#1a1a1a]">
                      <img src={s2Image} alt="Challenge Visualization" className="w-full h-full object-cover" />
                   </div>
-                  <div className="text-[10px] font-mono text-[#b3b3b3]/30 uppercase tracking-widest">Fig 1.0 — Old Design</div>
+                  <div className="text-[10px] font-mono text-[#b3b3b3]/30 uppercase tracking-widest">Old Design</div>
                </div>
             </div>
           </div>
@@ -354,7 +310,7 @@ const StudentDashboard = () => {
         {/* Redesigned Experience - Full Width Image */}
         <section className="py-24 border-t border-[#b3b3b3]/10">
            <div className="mb-12">
-              <span className="text-xs font-mono text-[#b3b3b3]/60 mb-6 block uppercase tracking-widest font-mono">(01.2) — Redesigned Experience</span>
+              <span className="text-xs font-mono text-[#b3b3b3]/60 mb-6 block uppercase tracking-widest font-mono">(3) — Redesigned Experience</span>
               <h2 className="font-serif text-4xl italic text-[#b3b3b3]">The New Dashboard</h2>
               <p className="text-sm text-[#b3b3b3]/50 mt-6 leading-relaxed max-w-xl">A unified experience that bridges the gap between live sessions—keeping students engaged and parents informed.</p>
            </div>
@@ -366,7 +322,7 @@ const StudentDashboard = () => {
         {/* Section 02: Core Problems (Previously 03) */}
         <section className="py-24 border-t border-[#b3b3b3]/10">
            <div className="mb-16">
-              <span className="text-xs font-mono text-[#b3b3b3]/60 mb-6 block uppercase tracking-widest font-mono">(02) — Analysis</span>
+              <span className="text-xs font-mono text-[#b3b3b3]/60 mb-6 block uppercase tracking-widest font-mono">(04) — Analysis</span>
               <h2 className="font-serif text-4xl italic text-[#b3b3b3]">The Core Problems</h2>
            </div>
            
@@ -390,37 +346,57 @@ const StudentDashboard = () => {
         <section className="py-24 border-t border-[#b3b3b3]/10">
           <div className="grid grid-cols-1 md:grid-cols-12">
             <div className="md:col-span-4 md:pr-12 pb-12 md:pb-0">
-               <span className="text-xs font-mono text-[#b3b3b3]/60 mb-6 block uppercase tracking-widest font-mono">(03) — Ideation</span>
-               <h2 className="font-serif text-4xl italic text-[#b3b3b3]">The Sketch Board</h2>
+               <span className="text-xs font-mono text-[#b3b3b3]/60 mb-6 block uppercase tracking-widest font-mono">(05) — Exploration</span>
+               <h2 className="font-serif text-4xl italic text-[#b3b3b3]">From Insight to Direction</h2>
                <p className="text-sm text-[#b3b3b3]/50 mt-6 leading-relaxed max-w-xs">Explaining the evolution of the interface from low-fidelity wireframes to the final gamified structure.</p>
             </div>
-            
             <div className="md:col-span-8 border-l border-[#b3b3b3]/10">
-               <div className="flex flex-col gap-12">
-                  {/* Research Artifact 1 - Wide */}
-                  <div className="space-y-4">
-                    <div className="aspect-[21/9] border border-[#b3b3b3]/10 overflow-hidden bg-[#1a1a1a]">
-                       <img src={s4Image} alt="Wireframing the Feed" className="w-full h-full object-cover" />
-                    </div>
-                    <div className="text-[10px] font-mono text-[#b3b3b3]/30 uppercase tracking-widest">Fig 2.1 — Wireframing the Feed</div>
+              {/* Editorial Points - Static Images */}
+              {(() => {
+                const points = [
+                  {
+                    title: "Behavioral Insights",
+                    desc: "Heatmaps and usage data revealed scattered attention and low activation. Students explored content but lacked clear direction, resulting in hesitation and reduced learning momentum.",
+                    img: s4Image,
+                    imgAlt: "Behavioral Insights"
+                  },
+                  {
+                    title: "Information Restructuring",
+                    desc: "Through feedback and card sorting, we reorganized the dashboard around priority-based actions instead of feature blocks — reducing cognitive load and clarifying the next step.",
+                    img: s5Image,
+                    imgAlt: "Information Restructuring"
+                  },
+                  {
+                    title: "Iterative Wireframing",
+                    desc: "Low-fidelity explorations focused on hierarchy, visibility, and guided progression — transforming the dashboard from a content hub into a momentum-driven learning experience.",
+                    img: s6Image,
+                    imgAlt: "Iterative Wireframing"
+                  }
+                ];
+                return (
+                  <div className="flex flex-col gap-16">
+                    {points.map((point, idx) => (
+                      <div key={idx} className="">
+                        <div className="flex items-start gap-4 mb-6">
+                          <div className="text-2xl font-serif text-[#b3b3b3]/60">{idx + 1}.</div>
+                          <div>
+                            <div className="text-xl font-serif text-[#b3b3b3] mb-2">{point.title}</div>
+                            <p className="text-sm text-[#b3b3b3]/70 leading-relaxed font-light">{point.desc}</p>
+                          </div>
+                        </div>
+                        <div className="w-full aspect-[21/9] border border-[#b3b3b3]/10 overflow-hidden bg-[#1a1a1a] rounded-none">
+                          <img
+                            src={point.img}
+                            alt={point.imgAlt}
+                            className="w-full h-full object-cover"
+                          />
+                          <div className="text-[10px] font-mono text-[#b3b3b3]/30 uppercase tracking-widest mt-2 px-2">{point.title}</div>
+                        </div>
+                      </div>
+                    ))}
                   </div>
-
-                  {/* Research Artifact 2 - Wide */}
-                  <div className="space-y-4">
-                    <div className="aspect-[21/9] border border-[#b3b3b3]/10 overflow-hidden bg-[#1a1a1a]">
-                       <img src={s5Image} alt="Gamification Mechanics" className="w-full h-full object-cover" />
-                    </div>
-                    <div className="text-[10px] font-mono text-[#b3b3b3]/30 uppercase tracking-widest">Fig 2.2 — Gamification Mechanics</div>
-                  </div>
-
-                   {/* Research Artifact 3 - Wide */}
-                  <div className="space-y-4">
-                    <div className="aspect-[21/9] border border-[#b3b3b3]/10 overflow-hidden bg-[#1a1a1a]">
-                       <img src={s6Image} alt="Information Architecture" className="w-full h-full object-cover" />
-                    </div>
-                    <div className="text-[10px] font-mono text-[#b3b3b3]/30 uppercase tracking-widest">Fig 2.3 — Information Architecture</div>
-                  </div>
-               </div>
+                );
+              })()}
             </div>
           </div>
         </section>
@@ -429,13 +405,13 @@ const StudentDashboard = () => {
         <section className="py-24 border-t border-[#b3b3b3]/10">
           <div className="grid grid-cols-1 md:grid-cols-12">
             <div className="md:col-span-4 md:pr-12 pb-12 md:pb-0">
-               <span className="text-xs font-mono text-[#b3b3b3]/60 mb-6 block uppercase tracking-widest font-mono">(04) — Strategy</span>
+               <span className="text-xs font-mono text-[#b3b3b3]/60 mb-6 block uppercase tracking-widest font-mono">(06) — Strategy</span>
                <h2 className="font-serif text-4xl italic text-[#b3b3b3]">Experience Shifts</h2>
                <p className="text-sm text-[#b3b3b3]/50 mt-6 leading-relaxed max-w-xs">Redesigning the ecosystem to ensure learning is visible, rewarding, and continuous.</p>
             </div>
             
             <div className="md:col-span-8 border-l border-[#b3b3b3]/10">
-               <div className="grid grid-cols-1 md:grid-cols-2">
+               <div className="grid grid-cols-1 md:grid-cols-2 border-t border-[#b3b3b3]/10">
                   {[
                     { label: "Community", title: "Social Learning", desc: "Transforming the dashboard from a static list to a dynamic feed of peer projects and updates." },
                     { label: "Habit", title: "Practice Zone", desc: "Creating a dedicated space for worksheets and quizzes to combat the 'forgetting curve'." },
@@ -458,7 +434,7 @@ const StudentDashboard = () => {
         {/* Section 05: Visual Outcomes (Renumbered from 06) */}
         <section className="py-24 border-t border-[#b3b3b3]/10">
            <div className="max-w-2xl mb-24">
-              <span className="text-xs font-mono text-[#b3b3b3]/60 mb-6 block uppercase tracking-widest font-mono">(05) — Designs</span>
+              <span className="text-xs font-mono text-[#b3b3b3]/60 mb-6 block uppercase tracking-widest font-mono">(07) — Designs</span>
               <h2 className="font-serif text-4xl italic text-[#b3b3b3]">The Final Experience</h2>
               <p className="text-sm text-[#b3b3b3]/50 leading-relaxed mt-6">A unified platform that balances gamification for students with utility for parents.</p>
            </div>
@@ -472,18 +448,6 @@ const StudentDashboard = () => {
                       className="w-full aspect-video object-cover transition-transform duration-1000 group-hover:scale-[1.01]" 
                       alt={item.title} 
                     />
-                  </div>
-                  <div className="grid grid-cols-1 md:grid-cols-12 gap-12 px-2 md:px-0">
-                    <div className="md:col-span-4">
-                      <div className="text-[10px] font-mono uppercase tracking-widest text-[#b3b3b3]/30 mb-4">{item.label}</div>
-                      <h3 className="font-serif text-2xl italic text-[#b3b3b3]">{item.title}</h3>
-                      <div className="text-xs font-mono text-[#b3b3b3]/40 mt-1 uppercase tracking-widest">/ {item.subtitle}</div>
-                    </div>
-                    <div className="md:col-span-8">
-                      <p className="text-sm text-[#b3b3b3]/60 leading-relaxed max-w-2xl font-light">
-                        {item.desc}
-                      </p>
-                    </div>
                   </div>
                 </div>
               ))}

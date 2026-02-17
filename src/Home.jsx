@@ -1,14 +1,10 @@
-import React, { useState, useEffect, useRef } from 'react'; import { Link } from 'react-router-dom';
-import { 
-  ArrowUpRight, 
-  Minus, 
-  ArrowDown,
-  Circle
-} from 'lucide-react';
+import React, { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
+import { ArrowUpRight, Minus, ArrowDown, Circle, Download } from 'lucide-react';
 import project1Image from './assets/h1.png';
 import project2Image from './assets/h2.png';
 import myPhoto from './assets/myphoto.png';
-
+// Removed invalid imports for MobileStory, DesignPhilosophySlideshow, and BridgeTimeline
 // Custom Hook for Parallax
 const useParallax = (speed = 0.1) => {
   const [offset, setOffset] = useState(0);
@@ -411,6 +407,23 @@ const Home = () => {
     image: project2Image,
     link: "/pages/projects/studentdashboard"
   }
+  ,
+  {
+    id: "03",
+    client: "Gamified Learning Platform",
+    category: "Coming Soon",
+    description: "Defining gamified experience for learning. An engaging platform that leverages game mechanics to motivate and enhance the learning journey, making education fun and interactive.",
+    image: project1Image,
+    link: "#"
+  },
+  {
+    id: "04",
+    client: "SaaS Subscription Manager",
+    category: "Coming Soon",
+    description: "Managing subscription made easy. A SaaS solution designed to simplify subscription management, automate renewals, and provide insightful analytics for businesses and individuals.",
+    image: project2Image,
+    link: "#"
+  }
 ];
 
   const thoughts = [
@@ -462,7 +475,7 @@ const Home = () => {
               <span className="italic text-[#b3b3b3]/50 pl-12 md:pl-24">chaos.</span>
             </h1>
 
-            <div>
+            <div className="flex gap-4">
               <a 
                 href="#work" 
                 className="inline-flex items-center gap-3 text-xs uppercase tracking-[0.2em] text-[#b3b3b3] border border-[#b3b3b3]/20 px-8 py-4 rounded-full hover:bg-[#b3b3b3] hover:text-[#242424] transition-all duration-500 group"
@@ -470,23 +483,40 @@ const Home = () => {
                 View Selected Works
                 <ArrowDown className="group-hover:translate-y-1 transition-transform duration-300" size={16} />
               </a>
+              <button
+                type="button"
+                className="inline-flex items-center justify-center border border-[#b3b3b3]/30 text-[#b3b3b3] rounded-full w-12 h-12 hover:bg-[#b3b3b3] hover:text-[#242424] transition-all duration-500 group focus:outline-none"
+                // TODO: Add resume download link to onClick or as <a> when available
+                title="Download Resume"
+              >
+                <Download className="transition-transform duration-300 group-hover:scale-110" size={22} />
+              </button>
             </div>
           </div>
         </section>
 
         {/* Intro Statement - Full Width Inverted Section */}
-        <section 
+        <section
           ref={introRef}
-          className={`min-h-screen flex items-center justify-center relative w-[100vw] left-[50%] right-[50%] -ml-[50vw] -mr-[50vw] transition-all duration-1000 ease-in-out ${
+          className={`min-h-screen flex items-center justify-center relative w-[100%] max-w-[100vw] left-0 transition-all duration-1000 ease-in-out ${
             introInView ? 'bg-[#b3b3b3]' : 'bg-[#242424]'
           }`}
+          style={{
+            width: '100vw',
+            marginLeft: 'calc(50% - 50vw)',
+            marginRight: 'calc(50% - 50vw)'
+          }}
         >
-           <div className="max-w-[1200px] mx-auto text-left px-6 md:px-12">
-              <p className={`text-3xl md:text-5xl font-serif !leading-[1.4em] transition-colors duration-1000 ${
+          {/* REMOVED max-w-4xl HERE */}
+          <div className="mx-auto text-left px-6 md:px-12 w-full flex flex-col items-center">
+              <p className={`intro-editorial-statement text-3xl md:text-5xl font-serif !leading-[1.4em] transition-colors duration-1000 md:whitespace-nowrap text-center ${
                 introInView ? 'text-[#242424]/80' : 'text-[#b3b3b3]/80'
               }`}>
-                I craft digital products that balance strict utility <br className="hidden md:block" />with subtle emotional resonance. <br className="hidden md:block" />Currently leading design at BrightCHAMPS.
+                I am a <span className="highlight">[Product Designer]</span>  <br className="hidden md:block" />
+                with <span className="highlight">[9 years]</span> of experience  <br className="hidden md:block" /> including <span className="highlight">[5 Years]</span> in <span className="arrow">→</span> <span className="highlight">[User Experience]</span>, <br className="hidden md:block" />
+                evolving from graphic and UI design
               </p>
+              
               <a 
                 href="#story" 
                 className={`inline-flex items-center gap-3 text-xs uppercase tracking-[0.2em] mt-12 border px-8 py-4 rounded-full transition-all duration-500 group ${
@@ -498,7 +528,7 @@ const Home = () => {
                 Know More
                 <ArrowUpRight className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" size={16} />
               </a>
-           </div>
+          </div>
         </section>
 
         {/* Selected Works - The "Index" */}
@@ -515,16 +545,52 @@ const Home = () => {
           </div>
 
           <div className="border-t border-[#b3b3b3]/10">
-            {projects.map((project, index) => (
-              <Link key={index} to={project.link} target="_blank" rel="noopener noreferrer" className="block">
-                <div className="group relative border-b border-[#b3b3b3]/10 py-16 transition-colors duration-700 hover:bg-[#1a1a1a] cursor-pointer">
+            {projects.map((project, index) => {
+              const isComingSoon = project.category === "Coming Soon";
+              const cardContent = (
+                <div
+                  className={`group relative border-b border-[#b3b3b3]/10 py-16 transition-colors duration-700 hover:bg-[#1a1a1a] ${isComingSoon ? 'cursor-not-allowed' : 'cursor-pointer'}`}
+                  onClick={e => { if (isComingSoon) e.preventDefault(); }}
+                  onMouseEnter={e => {
+                    if (isComingSoon) {
+                      const tooltip = document.createElement('div');
+                      tooltip.innerText = 'Coming Soon…';
+                      tooltip.style.position = 'fixed';
+                      tooltip.style.zIndex = 9999;
+                      tooltip.style.background = '#242424';
+                      tooltip.style.color = '#b3b3b3';
+                      tooltip.style.padding = '6px 16px';
+                      tooltip.style.borderRadius = '8px';
+                      tooltip.style.fontSize = '14px';
+                      tooltip.style.pointerEvents = 'none';
+                      tooltip.style.top = (e.clientY + 12) + 'px';
+                      tooltip.style.left = (e.clientX + 12) + 'px';
+                      tooltip.className = 'coming-soon-tooltip';
+                      document.body.appendChild(tooltip);
+                      e.target.addEventListener('mousemove', moveTooltip);
+                      function moveTooltip(ev) {
+                        tooltip.style.top = (ev.clientY + 12) + 'px';
+                        tooltip.style.left = (ev.clientX + 12) + 'px';
+                      }
+                      e.target._moveTooltip = moveTooltip;
+                    }
+                  }}
+                  onMouseLeave={e => {
+                    if (isComingSoon) {
+                      const tooltips = document.getElementsByClassName('coming-soon-tooltip');
+                      while (tooltips.length > 0) tooltips[0].remove();
+                      if (e.target._moveTooltip) {
+                        e.target.removeEventListener('mousemove', e.target._moveTooltip);
+                        delete e.target._moveTooltip;
+                      }
+                    }
+                  }}
+                >
                   <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center">
-                    
                     {/* ID */}
                     <div className="md:col-span-1 text-xs font-mono text-[#b3b3b3]/60 group-hover:text-[#b3b3b3] transition-colors duration-500 self-start md:self-center">
                       /{project.id}
                     </div>
-
                     {/* Client & Info */}
                     <div className="md:col-span-4 self-start md:self-center z-10">
                       <h3 className="text-3xl font-serif mb-4 group-hover:italic transition-all duration-75 text-[#b3b3b3]">{project.client}</h3>
@@ -532,12 +598,16 @@ const Home = () => {
                       <p className="text-sm text-[#b3b3b3]/70 leading-relaxed max-w-xs group-hover:text-[#b3b3b3] transition-colors duration-500 mb-8">
                         {project.description}
                       </p>
-                      
-                      <div className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-[#b3b3b3] border-b border-[#b3b3b3]/20 pb-1 group-hover:border-[#b3b3b3] transition-all">
-                        VIEW PROJECT <ArrowUpRight size={12} />
-                      </div>
+                      {isComingSoon ? (
+                        <div className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-[#b3b3b3]/60 border-b border-[#b3b3b3]/20 pb-1 cursor-not-allowed select-none opacity-60">
+                          COMING SOON…
+                        </div>
+                      ) : (
+                        <div className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-[#b3b3b3] border-b border-[#b3b3b3]/20 pb-1 group-hover:border-[#b3b3b3] transition-all">
+                          VIEW PROJECT <ArrowUpRight size={12} />
+                        </div>
+                      )}
                     </div>
-
                     {/* Parallax Image */}
                     <div className="md:col-span-7 h-[300px] md:h-[400px] w-full">
                       <ParallaxImage 
@@ -546,11 +616,17 @@ const Home = () => {
                         className="w-full h-full grayscale group-hover:grayscale-0 transition-all duration-700"
                       />
                     </div>
-
                   </div>
                 </div>
-              </Link>
-            ))}
+              );
+              return isComingSoon ? (
+                <div key={index}>{cardContent}</div>
+              ) : (
+                <Link key={index} to={project.link} target="_blank" rel="noopener noreferrer" className="block">
+                  {cardContent}
+                </Link>
+              );
+            })}
           </div>
         </section>
 
@@ -564,11 +640,11 @@ const Home = () => {
         <section id="studio" className="py-24 md:py-40 border-t border-[#b3b3b3]/10 px-6 md:px-0">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
             <div className="md:col-span-3">
-              <span className="text-xs font-mono text-[#b3b3b3]/60 sticky top-32">Beyond my Day Job</span>
+              
             </div>
             <div className="md:col-span-4">
               <h2 className="font-serif text-4xl md:text-5xl leading-tight text-[#b3b3b3]">
-                Side Ventures
+                Beyond my day job
               </h2>
             </div>
             <div className="md:col-span-5 md:flex md:items-end md:justify-end">
@@ -592,10 +668,9 @@ const Home = () => {
                   />
                 </div>
                 <div className="p-6">
-                  <div className="text-xs uppercase tracking-widest text-[#b3b3b3]/50 mb-2">Side Business</div>
                   <h3 className="text-2xl font-serif text-[#b3b3b3] mb-3 group-hover:italic transition-all duration-75">poppymellow.com</h3>
                   <p className="text-sm text-[#b3b3b3]/60 leading-relaxed">
-                    A brief description of your first side business venture and what makes it special.
+                    A self-initiated consumer brand experiment focused on brand-led discovery, fast launches, and marketing-first product decisions.
                   </p>
                 </div>
               </a>
@@ -610,10 +685,9 @@ const Home = () => {
                   />
                 </div>
                 <div className="p-6">
-                  <div className="text-xs uppercase tracking-widest text-[#b3b3b3]/50 mb-2">Side Business</div>
                   <h3 className="text-2xl font-serif text-[#b3b3b3] mb-3 group-hover:italic transition-all duration-75">xpedition.store</h3>
                   <p className="text-sm text-[#b3b3b3]/60 leading-relaxed">
-                    A brief description of your second side business venture and what makes it special.
+                    A self-driven outdoor lifestyle brand experiment exploring niche positioning, community-led branding, and utility-focused product strategy.
                   </p>
                 </div>
               </a>
@@ -701,6 +775,10 @@ const Home = () => {
         html {
           scroll-behavior: smooth;
         }
+          html, body {
+  max-width: 100%;
+  overflow-x: clip; /* 'clip' is safer than 'hidden' for horizontal scroll sections */
+}
       `}</style>
     </div>
   );
