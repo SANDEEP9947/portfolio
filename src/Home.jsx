@@ -3,6 +3,10 @@ import { Link } from 'react-router-dom';
 import { ArrowUpRight, Minus, ArrowDown, Circle, Download } from 'lucide-react';
 import project1Image from './assets/h1.png';
 import project2Image from './assets/h2.png';
+import project3Image from './assets/h3.png';
+import project4Image from './assets/h4.png';
+import project5Image from './assets/h5.png';
+import project6Image from './assets/h6.png';
 import myPhoto from './assets/myphoto.png';
 // Removed invalid imports for MobileStory, DesignPhilosophySlideshow, and BridgeTimeline
 // Custom Hook for Parallax
@@ -413,7 +417,7 @@ const Home = () => {
     client: "Gamified Learning Platform",
     category: "Coming Soon",
     description: "Defining gamified experience for learning. An engaging platform that leverages game mechanics to motivate and enhance the learning journey, making education fun and interactive.",
-    image: project1Image,
+    image: project3Image,
     link: "#"
   },
   {
@@ -421,7 +425,7 @@ const Home = () => {
     client: "SaaS Subscription Manager",
     category: "Coming Soon",
     description: "Managing subscription made easy. A SaaS solution designed to simplify subscription management, automate renewals, and provide insightful analytics for businesses and individuals.",
-    image: project2Image,
+    image: project4Image,
     link: "#"
   }
 ];
@@ -662,7 +666,7 @@ const Home = () => {
               <a href="https://www.poppymellow.com" target="_blank" rel="noopener noreferrer" className="group relative bg-[#1a1a1a] border border-[#b3b3b3]/10 overflow-hidden hover:border-[#b3b3b3]/30 transition-all duration-500 cursor-pointer block">
                 <div className="aspect-[4/3] bg-[#2a2a2a] overflow-hidden">
                   <img 
-                    src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=800&auto=format&fit=crop" 
+                    src={project5Image} 
                     alt="Business 1" 
                     className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
                   />
@@ -676,13 +680,16 @@ const Home = () => {
               </a>
 
               {/* Side Business Card 2 */}
-              <a href="https://www.xpedition.store" target="_blank" rel="noopener noreferrer" className="group relative bg-[#1a1a1a] border border-[#b3b3b3]/10 overflow-hidden hover:border-[#b3b3b3]/30 transition-all duration-500 md:mt-32 cursor-pointer block">
-                <div className="aspect-[4/3] bg-[#2a2a2a] overflow-hidden">
+              <div className="group relative bg-[#1a1a1a] border border-[#b3b3b3]/10 overflow-hidden hover:border-[#b3b3b3]/30 transition-all duration-500 md:mt-32 cursor-not-allowed block">
+                <div className="aspect-[4/3] bg-[#2a2a2a] overflow-hidden relative">
                   <img 
-                    src="https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=800&auto=format&fit=crop" 
+                    src={project6Image} 
                     alt="Business 2" 
                     className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
                   />
+                  <div className="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <span className="text-[#b3b3b3] text-lg font-semibold">Coming Soon</span>
+                  </div>
                 </div>
                 <div className="p-6">
                   <h3 className="text-2xl font-serif text-[#b3b3b3] mb-3 group-hover:italic transition-all duration-75">xpedition.store</h3>
@@ -690,7 +697,7 @@ const Home = () => {
                     A self-driven outdoor lifestyle brand experiment exploring niche positioning, community-led branding, and utility-focused product strategy.
                   </p>
                 </div>
-              </a>
+              </div>
 
             </div>
           </div>
